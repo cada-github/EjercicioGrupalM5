@@ -13,20 +13,42 @@
 	<div class="mt-5 container">
 		<div class="row">
 			<div class="col-6 offset-3">
-				<h1 class="text-center mb-5 text-bg-primary">Servlet Capacitación</h1>
-				<h2 class="text-center mb-5 text-bg-info">Trabajo Grupal 1 Módulo 5 </h2>
-				<h3 class="mb-1">Integrantes:</h3>
-				<ul class="list-group">
-					<li class="list-group-item list-group-item-primary">Nicolae Villegas</li>
-					<li class="list-group-item list-group-item-primary">Fabiana Vega</li>
-					<li class="list-group-item list-group-item-primary">Jesús Torres</li>
-					<li class="list-group-item list-group-item-primary">Cristian Díaz</li>
-				</ul>
-				<p>
-					<a class="link-opacity-100" href="https://github.com/cada-github/EjercicioGrupalM5.git">
-					GitHub: Ejercicio Grupal M5
-					</a>
-				</p>
+				<h2 class="text-center mb-5 text-bg-info">Capacitación</h2>
+				
+				<form action="capacitacion" method="post">
+					<div class="mb-3">
+						<label for="idcapacitacion" class="form-label">Identificador</label>
+						<input type="text" class="form-control" id="idcapacitacion" name="idcapacitacion" required>
+					</div>
+					<div class="mb-3">
+						<label for="rutcliente" class="form-label">Rut Cliente</label>
+						<input type="text" class="form-control" id="rutcliente" name="rutcliente" required>
+					</div>
+					<div class="mb-3">
+						<label for="dia" class="form-label">Dia</label>
+						<input type="text" class="form-control" id="dia" name="dia">
+					</div>
+					<div class="mb-3">
+						<label for="hora" class="form-label">Hora</label>
+						<input type="text" class="form-control" id="hora" name="hora">
+					</div>
+					<div class="mb-3">
+						<label for="lugar" class="form-label">Lugar</label>
+						<input type="text" class="form-control" id="lugar" name="lugar">
+					</div>
+					<div class="mb-3">
+						<label for="duracion" class="form-label">Duración</label>
+						<input type="text" class="form-control" id="duracion" name="duracion">
+					</div>
+					<div class="mb-3">
+						<label for="cantidadasistentes" class="form-label">Cantidad de asistentes</label>
+						<input type="text" class="form-control" id="cantidadasistentes" name="cantidadasistentes">
+					</div>
+					
+					<div class="d-grid gap-2">
+						<button type="submit" class="btn btn-primary">Enviar</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

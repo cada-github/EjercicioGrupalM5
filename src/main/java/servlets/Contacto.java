@@ -36,7 +36,13 @@ public class Contacto extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		doGet(request, response);
+		
+		String nombre = request.getParameter("nombre");
+		String telefono = request.getParameter("telefono");
+		String email = request.getParameter("email");
+		String comentario = request.getParameter("comentario");
 	}
 
 }
