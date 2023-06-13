@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class ServletIndex
@@ -19,7 +20,6 @@ public class Inicio extends HttpServlet {
      */
     public Inicio() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -28,7 +28,14 @@ public class Inicio extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		request.getRequestDispatcher("inicio.jsp").forward(request, response);
+		HttpSession session = request.getSession(false);// rescato la session
+		String usuario=(String) session.getAttribute("usuario");
+		
+		if (usuario != null) {	
+			request.getRequestDispatcher("inicio.jsp").forward(request, response);
+		}else {
+			request.getRequestDispatcher("login.jsp").forward(request, response);
+		}
 	}
 
 	/**
@@ -37,17 +44,6 @@ public class Inicio extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);
-		
-		String usuario = request.getParameter("usuario");
-		String password = request.getParameter("password");
-		
-		if (usuario.equals("admin") && password.equals("1234")) {
-			System.out.println(usuario+" "+password+" "+"EL IF SALIO VERDADERO");
-			getServletContext().getRequestDispatcher("/contacto.jsp").forward(request, response);
-		}else {
-			System.out.println(usuario+" "+password+" "+"EL IF SALIO FALSO");
-			// request.getRequestDispatcher("inicio.jsp").forward(request, response);
-		}
 	}
 
 }

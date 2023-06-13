@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ListarCapacitaciones
+ * Servlet implementation class Logout
  */
-@WebServlet("/ListarCapacitaciones")
-public class ListarCapacitaciones extends HttpServlet {
+@WebServlet("/Logout")
+public class Logout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListarCapacitaciones() {
+    public Logout() {
         super();
     }
 
@@ -26,22 +26,19 @@ public class ListarCapacitaciones extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		HttpSession session = request.getSession(false);// rescato la session
-		String usuario=(String) session.getAttribute("usuario");
-		
-		if (usuario != null) {
-			request.getRequestDispatcher("listarcapacitaciones.jsp").forward(request, response);
-		}else {
-			request.getRequestDispatcher("login.jsp").forward(request, response);
-		}
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			session.invalidate();//Cierra la session
+		}
+		request.getRequestDispatcher("login.jsp").forward(request, response);
 	}
 
 }

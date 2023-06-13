@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Capacitacion
@@ -19,7 +20,6 @@ public class Capacitacion extends HttpServlet {
      */
     public Capacitacion() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -28,7 +28,14 @@ public class Capacitacion extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		request.getRequestDispatcher("capacitacion.jsp").forward(request, response);
+		HttpSession session = request.getSession(false);// rescato la session
+		String usuario=(String) session.getAttribute("usuario");
+		
+		if (usuario != null) {
+			request.getRequestDispatcher("capacitacion.jsp").forward(request, response);
+		}else {
+			request.getRequestDispatcher("login.jsp").forward(request, response);
+		}
 	}
 
 	/**

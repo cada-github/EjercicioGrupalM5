@@ -1,44 +1,49 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" session="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<!-- Bootstrap -->
+		
+		<!--Bootstrap -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-		<!-- Bootstrap -->
-		<title>Login</title>
+		<!--Bootstrap -->		
+		
+		<!-- Estilos propios -->
+		<link href="css/estilos.css" rel="stylesheet" type="text/css">
+		<!-- Estilos propios -->
+		
+		<title>inicio</title>
 	</head>
-<body>
-	<div class="container mt-5">
-		<h1 class="text-center">Inicie Sesión</h1>
-		<div class="row mt-5">
-			<div class="col-4 offset-4">
-			
-			<!-- Inicio Formulario -->
-			<form action="Inicio" method="post">
-			
-				<!-- Nombre del usuario -->
-				<div class="mb-3">
-					<label for="usuario" class="form-label">Usuario</label>
-					<input type="text" class="form-control" id="usuario" name="usuario" required />
+	
+	<body>
+		<!-- Inicio Navbar -->
+		<jsp:include page="menu.jsp"/>
+		<!-- Fin Navbar -->
+	
+		<div class="mt-5 container">
+			<h1 class="text-center mt-5 mb-5">Bienvenido ${sessionScope.usuario}</h1>
+		
+			<div class="row">
+				<div class="col-6 offset-3">
+					<div class="row">
+						<h6 class="mb-1">Integrantes:</h6>
+						<ul class="list-group">
+							<li class="list-group-item list-group-item-primary">Nicolae Villegas</li>
+							<li class="list-group-item list-group-item-primary">Fabiana Vega</li>
+							<li class="list-group-item list-group-item-primary">Jesús Torres</li>
+							<li class="list-group-item list-group-item-primary">Cristian Díaz</li>
+						</ul>
+						<p>
+							<a class="link-opacity-100" href="https://github.com/cada-github/EjercicioGrupalM5.git">
+							GitHub: Ejercicio Grupal M5
+							</a>
+						</p>
+					</div>
 				</div>
-				
-				<!-- Clave del usuario -->
-				<div class="mb-3">
-					<label for="password" class="form-label">Ingrese contraseña</label>
-					<input type="text" class="form-control" id="password" name="password" required />
-				</div>
-				
-				<!-- boton de envio -->
-				<div class="d-grid gap-2">
-					<button type="submit" class="btn btn-success">Enviar</button>
-				</div>
-				
-			</form>
-			<!-- Fin Formulario -->
 			</div>
-		</div>
-	</div>
-</body>
+		</div>	
+	</body>
 </html>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" session="true"%>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,6 +11,7 @@
 		<title>Servlet Contacto</title>
 	</head>
 	<body>
+	
 	<div class="mt-5 container">
 		<div class="row">
 			<div class="col-6 offset-3">
