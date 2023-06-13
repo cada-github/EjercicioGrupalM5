@@ -22,12 +22,12 @@
 		
 		<div class="mt-5 container">
 			<div class="row">
-				<div class="col-6 offset-3">
+				<div class="col">
 					
 					<h2 class="text-center mb-5 text-bg-info">Lista Capacitaciones</h2>
 								
-					<table class="table table-striped table-hover">
-						<thead class="table-dark">
+					<table class="table">
+						<thead class="table-primary">
 						<tr>
 							<th scope="col">Identificador</th>
 							<th scope="col">Rut Cliente</th>
@@ -42,6 +42,12 @@
 				</div>
 				<a class="text-center mt-5" href="Inicio">Volver</a>
 			</div>
-		</div>	
+		</div>
+		<!-- JS BootStrap -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
+		crossorigin="anonymous">
+		</script>
+		<!-- JS BootStrap -->
 	</body>
 </html>

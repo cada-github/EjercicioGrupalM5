@@ -8,9 +8,13 @@
 		<!--Bootstrap -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 		<!--Bootstrap -->		
-		<title>Servlet Contacto</title>
+		<title>contacto</title>
 	</head>
 	<body>
+	
+	<!-- Inicio Navbar -->
+	<jsp:include page="menu.jsp"/>
+	<!-- Fin Navbar -->
 	
 	<div class="mt-5 container">
 		<div class="row">
@@ -57,6 +61,12 @@
 			</div>
 			</div>
 		</div>
-	</div>	
+	</div>
+	<!-- JS BootStrap -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
+	integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
+	crossorigin="anonymous">
+	</script>
+	<!-- JS BootStrap -->	
 	</body>
 </html>

@@ -25,6 +25,9 @@
           <a class="nav-link active" aria-current="page" href="ListarCapacitaciones">Listar Capacitaciones</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Contacto">Contacto</a>
+        </li>
+        <li class="nav-item">
           <form action="Logout" method="post">
           	<button class="btn btn-outline-danger type="submit">Cerrar sesión</button>
           </form>
