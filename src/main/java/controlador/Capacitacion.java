@@ -1,4 +1,4 @@
-package servlets;
+package controlador;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ServletIndex
+ * Servlet implementation class Capacitacion
  */
-@WebServlet("/Inicio")
-public class Inicio extends HttpServlet {
+@WebServlet("/Capacitacion")
+public class Capacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Inicio() {
+    public Capacitacion() {
         super();
     }
 
@@ -27,12 +27,12 @@ public class Inicio extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		HttpSession session = request.getSession(false);// rescato la session
 		String usuario=(String) session.getAttribute("usuario");
 		
-		if (usuario != null) {	
-			request.getRequestDispatcher("inicio.jsp").forward(request, response);
+		if (usuario != null) {
+			request.getRequestDispatcher("capacitacion.jsp").forward(request, response);
 		}else {
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}

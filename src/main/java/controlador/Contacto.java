@@ -1,4 +1,4 @@
-package servlets;
+package controlador;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,29 +9,30 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ListarCapacitaciones
+ * Servlet implementation class Contacto
  */
-@WebServlet("/ListarCapacitaciones")
-public class ListarCapacitaciones extends HttpServlet {
+@WebServlet("/Contacto")
+public class Contacto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListarCapacitaciones() {
+    public Contacto() {
         super();
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
 		HttpSession session = request.getSession(false);// rescato la session
 		String usuario=(String) session.getAttribute("usuario");
 		
 		if (usuario != null) {
-			request.getRequestDispatcher("listarcapacitaciones.jsp").forward(request, response);
+			request.getRequestDispatcher("contacto.jsp").forward(request, response);
 		}else {
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
@@ -40,7 +41,9 @@ public class ListarCapacitaciones extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
 		doGet(request, response);
 	}
 

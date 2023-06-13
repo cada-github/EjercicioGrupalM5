@@ -1,4 +1,4 @@
-package servlets;
+package controlador;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class Contacto
+ * Servlet implementation class ServletIndex
  */
-@WebServlet("/Contacto")
-public class Contacto extends HttpServlet {
+@WebServlet("/Inicio")
+public class Inicio extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Contacto() {
+    public Inicio() {
         super();
     }
 
@@ -31,8 +31,8 @@ public class Contacto extends HttpServlet {
 		HttpSession session = request.getSession(false);// rescato la session
 		String usuario=(String) session.getAttribute("usuario");
 		
-		if (usuario != null) {
-			request.getRequestDispatcher("contacto.jsp").forward(request, response);
+		if (usuario != null) {	
+			request.getRequestDispatcher("inicio.jsp").forward(request, response);
 		}else {
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
@@ -43,7 +43,6 @@ public class Contacto extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
 		doGet(request, response);
 	}
 
