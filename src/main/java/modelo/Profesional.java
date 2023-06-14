@@ -6,7 +6,7 @@ public class Profesional {
 	private String fechaIngreso;
 	
 	
-	// Constructores
+	// Constructores 
 	
 	public Profesional() {
 		

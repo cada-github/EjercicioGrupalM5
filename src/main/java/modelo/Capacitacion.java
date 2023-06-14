@@ -11,6 +11,7 @@ public class Capacitacion {
 		private int cantidadAsistentes;
 		
 	// constructores 	
+		
 		public Capacitacion() {
 	
 		}
