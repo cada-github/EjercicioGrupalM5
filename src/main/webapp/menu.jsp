@@ -18,12 +18,24 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="Inicio">Inicio</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Capacitacion">Capacitación</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="ListarCapacitaciones">Listar Capacitaciones</a>
-        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Capacitaciones
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Capacitacion">Crear</a></li>
+            <li><a class="dropdown-item" href="ListarCapacitaciones">Listar</a></li>
+          </ul>
+        </li>                
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Usuarios
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="CrearUsuario">Crear</a></li>
+            <li><a class="dropdown-item" href="ListadoUsuarios">Listar</a></li>
+          </ul>
+        </li>        
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="Contacto">Contacto</a>
         </li>
