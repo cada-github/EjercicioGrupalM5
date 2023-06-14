@@ -1,7 +1,29 @@
 package modelo;
 
-public class Cliente {
+/** 
+ * @version 1.0.0  Trabajo Sprint M4
+ * @author Nicolae Villegas
+ * @author Jesus Torres
+ * @author Cristian Díaz
+ * @author Fabiana Vega
+ */
+
+/**
+ * Clase Cliente extiende de clase Usuario
+ * Atributos:
+ * rutCliente
+ * nombres
+ * apellidos
+ * telefonos
+ * afp
+ * sistemaSalud
+ * direccion
+ * comuna
+ * edad
+ */
+public class Cliente extends Usuario{
 	
+	private int rutCliente;
 	private String nombres;
 	private String apellidos;
 	private String telefonos;
@@ -14,14 +36,16 @@ public class Cliente {
 	
 	// constructores  
 	
-	public Cliente() {
+	public Cliente() {}
+
+
+	public Cliente(int rutCliente, String nombreUsuario, String fechaNacimiento,
+			String nombres, String apellidos,String telefonos, String afp,
+			int sistemaSalud, String direccion, String comuna, byte edad) {
 		
-	}
-
-
-	public Cliente(String nombres, String apellidos, String telefonos, String afp, int sistemaSalud, String direccion,
-			String comuna, byte edad) {
-		super();
+		super(nombreUsuario, fechaNacimiento, rutCliente);
+		
+		this.rutCliente=rutCliente;
 		this.nombres = nombres;
 		this.apellidos = apellidos;
 		this.telefonos = telefonos;
@@ -32,82 +56,163 @@ public class Cliente {
 		this.edad = edad;
 	}
 
+	//Metodos de la clase
+	
+	/**
+	 * @param sistemaSalud Recibe entero sistema de salud 1=FONASA, 2=ISAPRE
+	 * @return Retorna String nombre sistema salud
+	 */
+	public String obtenerSistemaSalud(int sistemaSalud) {
+		String sisSalud="";
+		switch (sistemaSalud) {
+			case 1:
+				sisSalud="FONASA";
+		break;
+			case 2:
+				sisSalud="ISAPRE";
+				break;
+		default:
+			sisSalud="Sin Sistema de salud";
+		}
+		return "Sus sistema de salud es: "+sisSalud;
+	}
 
+	// Metodos getters y setters
+	
+
+	/**
+	 * @return Retorna entero rut del cliente
+	 */
+	public int getRutCliente() {
+		return rutCliente;
+	}
+
+	/**
+	 * @param rutCliente Recibe y valida entero rut del cliente
+	 * corresponde a un número menor a 99.999.999
+	 */
+	public void setRutCliente(int rutCliente) {
+			this.rutCliente=rutCliente;
+	}
+
+	/**
+	 * @return Retorna String nombres
+	 */
 	public String getNombres() {
 		return nombres;
 	}
 
-
+	/**
+	 * @param nombres Recibe y valida string nombres
+	 * obligatorio, mínimo 5 caracteres, máximo 30
+	 */
 	public void setNombres(String nombres) {
 		this.nombres = nombres;
 	}
 
-
+	/**
+	 * @return Retorna cadena apellidos
+	 */
 	public String getApellidos() {
 		return apellidos;
 	}
 
-
+	/**
+	 * @param apellidos Recibe y valida cadena apellidos
+	 * obligatorio, mínimo 5 caracteres, máximo 30
+	 */
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
 
-
+	/**
+	 * @return Retorna cadena telefonos
+	 */
 	public String getTelefonos() {
 		return telefonos;
 	}
 
-
+	/**
+	 * @param telefonos Recibe y valida cadena telefonos
+	 * obligatorio
+	 */
 	public void setTelefonos(String telefonos) {
 		this.telefonos = telefonos;
 	}
 
-
+	/**
+	 * @return Retorna cadena nombre AFP
+	 */
 	public String getAfp() {
 		return afp;
 	}
 
-
+	/**
+	 * @param afp Recibe y valida cadena AFP
+	 * mínimo 4 caracteres, máximo 30
+	 */
 	public void setAfp(String afp) {
 		this.afp = afp;
 	}
 
-
+	/**
+	 * @return Retorna entero sistema de salud
+	 * 1=FONASA
+	 * 2=ISAPRE
+	 */
 	public int getSistemaSalud() {
 		return sistemaSalud;
 	}
 
-
+	/**
+	 * @param sistemaSalud Recibe y valida entero sistema de salud
+	 * 1=FONASA y 2=ISAPRE
+	 */
 	public void setSistemaSalud(int sistemaSalud) {
 		this.sistemaSalud = sistemaSalud;
 	}
 
-
+	/**
+	 * @return Retorna string con direccion
+	 */
 	public String getDireccion() {
 		return direccion;
 	}
 
-
+	/**
+	 * @param direccion Recibe y valida string direccion
+	 * máximo 70 caracteres
+	 */
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
 
-
+	/**
+	 * @return Retorna string comuna
+	 */
 	public String getComuna() {
 		return comuna;
 	}
 
-
+	/**
+	 * @param comuna Recibe y valida string comuna
+	 * máximo 50 caracteres
+	 */
 	public void setComuna(String comuna) {
 		this.comuna = comuna;
 	}
 
-
+	/**
+	 * @return Retorna byte edad
+	 */
 	public byte getEdad() {
 		return edad;
 	}
 
-
+	/**
+	 * @param edad Recibe y valida byte edad
+	 * obligatorio, número mayor o igual a cero, y menor a 150
+	 */
 	public void setEdad(byte edad) {
 		this.edad = edad;
 	}
