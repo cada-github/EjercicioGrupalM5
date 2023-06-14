@@ -12,7 +12,7 @@ public class Cliente {
 	private byte edad;
 	
 	
-	// constructores 
+	// constructores  
 	
 	public Cliente() {
 		
