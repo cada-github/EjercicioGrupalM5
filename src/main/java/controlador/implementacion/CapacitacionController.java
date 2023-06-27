@@ -1,4 +1,4 @@
-package controlador.capacitacioncontroller;
+package controlador.implementacion;
 
 import java.util.List;
 

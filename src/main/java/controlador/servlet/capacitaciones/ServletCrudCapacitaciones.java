@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import controlador.capacitacioncontroller.CapacitacionController;
+import controlador.implementacion.CapacitacionController;
 import modelo.entity.Capacitacion;
 
 
