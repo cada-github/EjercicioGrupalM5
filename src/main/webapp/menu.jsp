@@ -23,8 +23,8 @@
             Capacitaciones
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="Capacitacion">Crear</a></li>
-            <li><a class="dropdown-item" href="ListarCapacitaciones">Listar</a></li>
+            <li><a class="dropdown-item" href="ServletCrearCapacitaciones">Crear</a></li>
+            <li><a class="dropdown-item" href="ServletListarCapacitaciones">Listar</a></li>
           </ul>
         </li>                
         <li class="nav-item dropdown">

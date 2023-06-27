@@ -1,9 +1,7 @@
 package modelo;
 
-import java.util.Calendar;
-
 /** 
- * @version 1.0.0  Trabajo Sprint M4
+ * @version 1.0.0  Trabajo Grupal Módulo 5
  * @author Nicolae Villegas
  * @author Jesus Torres
  * @author Cristian Díaz

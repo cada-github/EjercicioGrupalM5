@@ -16,18 +16,28 @@
 			<div class="col-4 offset-4">
 			
 			<!-- Inicio Formulario -->
-			<form action="Login" method="post">
+			<form id="form-login">
 			
 				<!-- Nombre del usuario -->
 				<div class="mb-3">
-					<label for="usuario" class="form-label">Usuario</label>
-					<input type="text" class="form-control" id="usuario" name="usuario" required />
+					<label for="username" class="form-label">Nombre usuario</label>
+					<input 
+						type="text" 
+						class="form-control" 
+						id="username" 
+						name="username" 
+						required />
 				</div>
 				
 				<!-- Clave del usuario -->
 				<div class="mb-3">
 					<label for="password" class="form-label">Ingrese contraseña</label>
-					<input type="text" class="form-control" id="password" name="password" required />
+					<input 
+						type="text" 
+						class="form-control" 
+						id="password" 
+						name="password" 
+						required />
 				</div>
 				
 				<!-- boton de envio -->
@@ -40,5 +50,12 @@
 			</div>
 		</div>
 	</div>
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- JQuery -->
+	
+	<!-- JS propio -->
+	<script src="js/app.js"></script>
+	<!-- JS propio -->
 </body>
 </html>
