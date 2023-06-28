@@ -32,8 +32,8 @@
             Usuarios
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="CrearUsuario">Crear</a></li>
-            <li><a class="dropdown-item" href="ListadoUsuarios">Listar</a></li>
+            <li><a class="dropdown-item" href="ServletCrearUsuario">Crear</a></li>
+            <li><a class="dropdown-item" href="ServletListadoUsuarios">Listar</a></li>
           </ul>
         </li>        
         <li class="nav-item">

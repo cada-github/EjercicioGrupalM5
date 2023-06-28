@@ -4,7 +4,7 @@ import java.util.List;
 
 import modelo.entity.Capacitacion;
 
-public interface ICapacitacion {
+public interface ICapacitacionController {
 	
 	// desplegar todos
 	public List<Capacitacion> findAllCapacitaciones();

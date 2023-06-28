@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" session="true"%>
+    pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
 <html>
@@ -8,7 +8,12 @@
 		<!--Bootstrap -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 		<!--Bootstrap -->		
-		<title>crear usuario</title>
+
+		<!-- Estilos propios -->
+		<link href="css/estilos.css" rel="stylesheet" type="text/css">
+		<!-- Estilos propios -->
+
+		<title>crear nuevo usuario</title>
 	</head>
 	<body>
 	
@@ -17,37 +22,66 @@
 	<!-- Fin Navbar -->
 	
 	<div class="mt-5 container">
-		<div class="row">
-			<div class="col-6 offset-3">
+	
+		<h2 class="text-center mb-5 text-bg-info">Nuevo Usuario</h2>
+	
+		<div class="row mt-5">
+			<div class="col-4 offset-4">
 				
-				<h2 class="text-center mb-5 text-bg-info">Nuevo Usuario</h2>
+				<form class="fondo-form" action="ServletCrudUsuarios" method="post" id="form-create-usuario">
 				
-				<form action="CrearUsuario" method="post">
 					<div class="mb-3">
 						<label for="nombre" class="form-label">Nombre</label>
-						<input type="text" class="form-control" id="nombre" name="nombre" required>
+						<input
+						type="text"
+						class="form-control"
+						id="nombre"
+						name="nombre"
+						required
+						/>
+						<small id="nombreHelp" class="form-text text-muted">Digite el nombre</small>
 					</div>
+					
 					<div class="mb-3">
 						<label for="fechanacimiento" class="form-label">Fecha de Nacimiento</label>
-						<input type="text" class="form-control" id="fechanacimiento" name="fechanacimiento" required>
+						<input 
+						type="text" 
+						class="form-control" 
+						id="fechanacimiento" 
+						name="fechanacimiento" 
+						required>
+						<small id="fechanacimientorutHelp" class="form-text text-muted">Digite la fecha de nacimiento</small>
 					</div>
+					
 					<div class="mb-3">
 						<label for="run" class="form-label">Run</label>
-						<input type="text" class="form-control" id="run" name="run">
+						<input 
+						type="number" 
+						class="form-control" 
+						id="run" 
+						name="run"
+						required
+						/>
+						<small id="runHelp" class="form-text text-muted">Digite el RUN</small>
 					</div>
+					
+					<input type="hidden" name="option" value="saveUsuario">
+					
 					<div class="d-grid gap-2">
 						<button type="submit" class="btn btn-primary">Enviar</button>
 					</div>
+					
 				</form>				
 			</div>
-			<a class="text-center mt-5" href="Inicio">Volver</a>
+			<a class="text-center mt-5" href="inicio.jsp">Volver</a>
 		</div>
 	</div>
-	<!-- JS BootStrap -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
-	integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
-	crossorigin="anonymous">
-	</script>
-	<!-- JS BootStrap -->	
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- JQuery -->
+	
+	<!-- JS propios -->
+	<script src="js/validaciones.js"></script>
+	<!-- JS propios -->
 	</body>
 </html>

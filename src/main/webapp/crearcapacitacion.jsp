@@ -21,7 +21,7 @@
 	
 		<div class="mt-5 container">
 			
-			<h1 class="text-center">Crear Capacitación</h1>
+			<h2 class="text-center">Crear Capacitación</h2>
 			
 			<div class="row mt-5">
 				<div class="col-4 offset-4">

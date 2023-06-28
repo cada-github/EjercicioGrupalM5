@@ -7,6 +7,8 @@ package modelo;
  * @author Fabiana Vega
  */
 
+import modelo.entity.Usuario;
+
 /** Clase Administrativo extiende de clase Usuario
 * Atributos:
 * area

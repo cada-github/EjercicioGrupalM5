@@ -1,4 +1,4 @@
-package controlador.servlet.capacitaciones;
+package controlador.servlet.crud;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -84,7 +84,6 @@ public class ServletCrudCapacitaciones extends HttpServlet {
 	    		
 	    		capacitacionController.saveCapacitacion(saveCapacitacion);
 	    		url = "crearcapacitacion.jsp";
-	    		//request.setAttribute("capacitaciones", capacitacionController.findAllCapacitaciones());
 	    		break;
 	    	}
 

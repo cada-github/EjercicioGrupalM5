@@ -1,5 +1,7 @@
 package modelo;
 
+import modelo.entity.Usuario;
+
 /** 
  * @version 1.0.0  Trabajo Sprint M4
  * @author Nicolae Villegas

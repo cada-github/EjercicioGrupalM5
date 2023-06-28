@@ -1,7 +1,5 @@
 package services;
 
-import java.math.BigInteger;
-import java.security.MessageDigest;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;

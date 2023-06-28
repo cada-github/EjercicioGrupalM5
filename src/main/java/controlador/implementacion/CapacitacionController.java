@@ -3,10 +3,10 @@ package controlador.implementacion;
 import java.util.List;
 
 import services.CapacitacionService;
-import controlador.interfaces.ICapacitacion;
+import controlador.interfaces.ICapacitacionController;
 import modelo.entity.Capacitacion;
 
-public class CapacitacionController implements ICapacitacion{
+public class CapacitacionController implements ICapacitacionController{
 
 	CapacitacionService capacitacionService = new CapacitacionService();
 	

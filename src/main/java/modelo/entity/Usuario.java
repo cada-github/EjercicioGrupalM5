@@ -1,4 +1,4 @@
-package modelo;
+package modelo.entity;
 
 /** 
  * @version 1.0.0  Trabajo Grupal Módulo 5
@@ -24,14 +24,12 @@ public class Usuario {
 	
 	public Usuario() {	}
 	
-	public Usuario(String nombreUsuario, String fechaNacimiento, int run) {
+	public Usuario(String nombreUsuario, String fechaNacimientoUsuario, int run) {
+
 		this.setNombreUsuario(nombreUsuario);
 		this.setFechaNacimientoUsuario(fechaNacimientoUsuario);
 		this.setRunUsuario(run);
 		
-		this.nombreUsuario = this.getNombreUsuario();
-		this.fechaNacimientoUsuario = this.getFechaNacimientoUsuario();
-		this.runUsuario = this.getRunUsuario();
 	}
 	
 	//Metodos setters y getters

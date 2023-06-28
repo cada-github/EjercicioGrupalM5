@@ -49,15 +49,7 @@ public class Capacitacion implements Serializable{
 		this.setLugar(lugar);
 		this.setDuracion(duracion);
 		this.setCantidadAsistentes(cantidadAsistentes);
-/*		
-		this.identificador = this.getIdentificador();
-		this.rut = this.getRut();
-		this.dia = this.getDia();
-		this.hora = this.getHora();
-		this.lugar = this.getLugar();
-		this.duracion = this.getDuracion();
-		this.cantidadAsistentes = this.getCantidadAsistentes();
-*/
+
 	}
 
 	//Metodos de la clase
