@@ -1,13 +1,12 @@
-package modelo;
+package modelo.entity;
+
 /** 
- * @version 1.0.0  Trabajo GRUPAL M5
+ * @version 1.0.0  Trabajo Sprint M5
  * @author Nicolae Villegas
  * @author Jesus Torres
  * @author Cristian Díaz
  * @author Fabiana Vega
  */
-
-import modelo.entity.Usuario;
 
 /** Clase Administrativo extiende de clase Usuario
 * Atributos:
@@ -15,10 +14,13 @@ import modelo.entity.Usuario;
 * aniosExperiencia
 */
 public class Administrativo extends Usuario {
+
 	private String area;
 	private String aniosExperiencia;
 	
-	public Administrativo() { }
+	// Constructores
+	
+	public Administrativo() {}
 	
 	public Administrativo(String nombreUsuario, String fechaNacimiento, int rut,
 			String area, String aniosExperiencia) {
@@ -45,7 +47,7 @@ public class Administrativo extends Usuario {
 	 * obligatorio, mínimo 5 caracteres, máximo 20
 	 */
 	public void setArea(String area) {
-		this.area = area;
+	this.area = area;
 	}
 	
 	/**
@@ -71,4 +73,5 @@ public class Administrativo extends Usuario {
 				", aniosExperiencia=" + aniosExperiencia + 
 				", toString()="	+ super.toString() + "]";
 	}
+
 }

@@ -12,58 +12,45 @@
 		<link href="css/estilos.css" rel="stylesheet" type="text/css">
 		<!-- Estilos propios -->
 		
-		<title>Mantención de usuario</title>
+		<title>Mantención de profesional</title>
 	</head>
-		<body>
-			<!-- Inicio Navbar -->
-			<jsp:include page="menu.jsp"/>
-			<!-- Fin Navbar -->
-		
-			<div class="mt-5 container">
+	<body>
+		<!-- Inicio Navbar -->
+		<jsp:include page="menu.jsp"/>
+		<!-- Fin Navbar -->
+	
+		<div class="mt-5 container">
+			
+			<h2 class="text-center">Formulario Profesional</h2>
+			
+			<div class="row mt-5">
+				<div class="col-4 offset-4">
 				
-				<h2 class="text-center">Formulario Usuario</h2>
-				
-				<div class="row mt-5">
-					<div class="col-4 offset-4">
-					
-					<form class="fondo-form" action="ServletCrudUsuarios" method="post" id="form-create-usuario">
+					<form class="fondo-form" action="ServletCrudProfesional" method="post" id="form-create-profesional">
 	
 						<div class="mb-3">
-							<label for="run" class="form-label">Run</label>
-							<input 
-							type="number" 
-							class="form-control" 
-							id="run" 
-							name="run"
-							value="${usuario.runUsuario}"
-							readonly
-							/>
-						</div>
-					
-						
-						<div class="mb-3">
-							<label for="nombre" class="form-label">Nombre</label>
+							<label for="titulo" class="form-label">Titulo</label>
 							<input 
 							type="text" 
 							class="form-control" 
-							id="nombre" 
-							name="nombre"
-							value="${usuario.nombreUsuario}"
+							id="titulo" 
+							name="titulo"
+							value="${profesional.titulo}"
 							/>
 						</div>
 						
 						<div class="mb-3">
-							<label for="fechanacimiento" class="form-label">Fecha de Nacimiento</label>
+							<label for="fechaingreso" class="form-label">Fecha de Ingreso</label>
 							<input
 							type="text"
 							class="form-control"
-							id="fechanacimiento"
-							name="fechanacimiento"
-							value="${usuario.fechaNacimientoUsuario}"
+							id="fechaingreso"
+							name="fechaingreso"
+							value="${profesional.fechaIngreso}"
 							/>
 						</div>					
 						
-						<input type="hidden" name="option" value="updateUsuario">
+						<input type="hidden" name="option" value="updateProfesional">
 						
 						<div class="d-grid gap-2">
 							<button type="submit" class="btn btn-primary">Enviar</button>
@@ -82,5 +69,6 @@
 		<!-- JQuery -->
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<!-- JQuery -->
+	
 	</body>
 </html>

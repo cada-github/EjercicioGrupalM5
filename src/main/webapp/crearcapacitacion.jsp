@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" session="true"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -106,6 +106,12 @@
 			<a class="text-center mt-5" href="inicio.jsp">Volver</a>
 		</div>
 	</div>
+	
+	<!-- JS BootStrap -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- JS BootStrap -->
+	
 	<!-- JQuery -->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<!-- JQuery -->
@@ -113,5 +119,6 @@
 	<!-- JS propios -->
 	<script src="js/validaciones.js"></script>
 	<!-- JS propios -->
+	
 </body>
 </html>

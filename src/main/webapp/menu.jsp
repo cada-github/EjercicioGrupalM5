@@ -37,7 +37,7 @@
           </ul>
         </li>        
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Contacto">Contacto</a>
+          <a class="nav-link active" aria-current="page" href="ServletContacto">Contacto</a>
         </li>
         <li class="nav-item">
           <form action="Logout" method="post">

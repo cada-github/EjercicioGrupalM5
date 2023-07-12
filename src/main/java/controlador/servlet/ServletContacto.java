@@ -1,4 +1,4 @@
-package controlador;
+package controlador.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -11,17 +11,10 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class Contacto
  */
-@WebServlet("/Contacto")
-public class Contacto extends HttpServlet {
+@WebServlet("/ServletContacto")
+public class ServletContacto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Contacto() {
-        super();
-    }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -44,7 +37,28 @@ public class Contacto extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		doGet(request, response);
+		// doGet(request, response);
+		String nombre = request.getParameter("nombre");
+		String telefono = request.getParameter("telefono");
+		String email = request.getParameter("email");
+		String comentario = request.getParameter("comentario");
+		
+		despliegaDatosContacto(nombre,telefono,email,comentario);
+		
+		request.getRequestDispatcher("inicio.jsp").forward(request, response);
+	}
+	
+	private void despliegaDatosContacto(String nombre, String telefono, String email, String comentario) {
+		  
+		System.out.println("*****************");
+		System.out.println("DATOS DE CONTACTO");
+		System.out.println("*****************");
+		System.out.println(nombre);
+		System.out.println(telefono);
+		System.out.println(email);
+		System.out.println(comentario);
+		System.out.println("*****************");
+		  
 	}
 
 }

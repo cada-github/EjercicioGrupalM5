@@ -19,11 +19,13 @@ public class CapacitacionController implements ICapacitacionController{
 	
 	@Override
 	public Capacitacion saveCapacitacion(Capacitacion capacitacion) {
+		
 	    return capacitacionService.saveCapacitacion(capacitacion);
 	}
 
 	@Override
 	public void deleteCapacitacionByIdentificador(int identificador) {
+		
 	    boolean isDeleted = capacitacionService.deleteCapacitacionByIdentificador(identificador);
 	    
 	    if(isDeleted) {
@@ -36,11 +38,13 @@ public class CapacitacionController implements ICapacitacionController{
 
 	@Override
 	public Capacitacion updateCapacitacion(Capacitacion capacitacion) {
+		
 	    return capacitacionService.updateCapacitacion(capacitacion);
 	}
 
 	@Override
 	public Capacitacion findByIdentificadorCapacitacion(int identificador) {
+		
 	    return capacitacionService.findByIdentificadorCapacitacion(identificador);
 	}
 	

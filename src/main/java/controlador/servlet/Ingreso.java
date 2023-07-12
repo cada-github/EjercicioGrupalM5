@@ -47,8 +47,8 @@ public class Ingreso extends HttpServlet {
 
 	private void guardarCredenciales(String username, String password, HttpServletResponse response) {
 		  
-		  Cookie cookie = new Cookie("credenciales", username); // ven algo de malo
-		  cookie.setMaxAge(1000); // la edad la cookie "el tiempo que va durar"
+		  Cookie cookie = new Cookie("credenciales", username);
+		  cookie.setMaxAge(1000);
 		  response.addCookie(cookie);
 		  
 	}

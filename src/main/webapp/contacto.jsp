@@ -7,7 +7,12 @@
 		<meta charset="UTF-8">
 		<!--Bootstrap -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-		<!--Bootstrap -->		
+		<!--Bootstrap -->
+		
+		<!-- Estilos propios -->
+		<link href="css/estilos.css" rel="stylesheet" type="text/css">
+		<!-- Estilos propios -->
+		
 		<title>contacto</title>
 	</head>
 	<body>
@@ -22,17 +27,17 @@
 				
 				<h2 class="text-center mb-5 text-bg-info">Contacto</h2>
 				
-				<form action="Contacto" method="post">
+				<form action="ServletContacto" method="post">
 					<div class="mb-3">
 						<label for="nombre" class="form-label">Nombre</label>
 						<input type="text" class="form-control" id="nombre" name="nombre" required>
 					</div>
 					<div class="mb-3">
-						<label for="Telefono" class="form-label">Telefono</label>
+						<label for="telefono" class="form-label">Telefono</label>
 						<input type="text" class="form-control" id="telefono" name="telefono" required>
 					</div>
 					<div class="mb-3">
-						<label for="Email" class="form-label">Email</label>
+						<label for="email" class="form-label">Email</label>
 						<input type="text" class="form-control" id="email" name="email">
 					</div>
 					<div class="form-floating mb-3">
@@ -48,11 +53,15 @@
 			<a class="text-center mt-5" href="Inicio">Volver</a>
 		</div>
 	</div>
+	
 	<!-- JS BootStrap -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
-	integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
-	crossorigin="anonymous">
-	</script>
-	<!-- JS BootStrap -->	
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- JS BootStrap -->
+	
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- JQuery -->
+	
 	</body>
 </html>

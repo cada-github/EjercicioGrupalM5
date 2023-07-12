@@ -1,9 +1,7 @@
-package modelo;
-
-import modelo.entity.Usuario;
+package modelo.entity;
 
 /** 
- * @version 1.0.0  Trabajo Sprint M4
+ * @version 1.0.0  Trabajo Sprint M5
  * @author Nicolae Villegas
  * @author Jesus Torres
  * @author Cristian Díaz
@@ -15,17 +13,15 @@ import modelo.entity.Usuario;
 * titulo
 * fechaIngreso
 */
-public class Profesional extends Usuario{
-
+public class Profesional extends Usuario {
+	
 	private String titulo;
 	private String fechaIngreso;
 	
-	
-	// Constructores 
+	// Constructores
 	
 	public Profesional() {}
-
-
+	
 	public Profesional(String nombreUsuario, String fechaNacimiento, int rut,
 			String titulo, String fechaIngreso) {
 		super(nombreUsuario, fechaNacimiento, rut);
@@ -44,7 +40,7 @@ public class Profesional extends Usuario{
 	public String getTitulo() {
 		return titulo;
 	}
-
+	
 	/**
 	 * @param titulo Recibe y valida cadena titulo
 	 * obligatorio, mínimo 10 caracteres, máximo 50
@@ -59,7 +55,7 @@ public class Profesional extends Usuario{
 	public String getFechaIngreso() {
 		return fechaIngreso;
 	}
-
+	
 	/**
 	 * @param fechaIngreso Recibe y valida cadena fechaIngreso
 	 * independiente si lo declara como una fecha o un String, 
@@ -68,4 +64,15 @@ public class Profesional extends Usuario{
 	public void setFechaIngreso(String fechaIngreso) {
 		this.fechaIngreso = fechaIngreso;
 	}
+	
+	// Metodos sobreescritos
+
+	@Override
+	public String toString() {
+		return "Profesional [titulo=" + titulo + 
+				", fechaIngreso=" + fechaIngreso + 
+				", toString()=" + super.toString()
+				+ "]";
+	}
+	
 }
