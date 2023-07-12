@@ -31,6 +31,19 @@
 				<form class="fondo-form" action="ServletCrudUsuarios" method="post" id="form-create-usuario">
 				
 					<div class="mb-3">
+						<label for="run" class="form-label">Run</label>
+						<input 
+						type="number" 
+						class="form-control" 
+						id="run" 
+						name="run"
+						required
+						/>
+						<small id="runHelp" class="form-text text-muted">Digite el RUN</small>
+					</div>
+					
+				
+					<div class="mb-3">
 						<label for="nombre" class="form-label">Nombre</label>
 						<input
 						type="text"
@@ -54,15 +67,13 @@
 					</div>
 					
 					<div class="mb-3">
-						<label for="run" class="form-label">Run</label>
-						<input 
-						type="number" 
-						class="form-control" 
-						id="run" 
-						name="run"
-						required
-						/>
-						<small id="runHelp" class="form-text text-muted">Digite el RUN</small>
+						<label for="tipo" class="form-label">Tipo de Usuario</label>
+						<select class="form-select" id="tipo" name="tipo">
+							<option value="cliente">Cliente</option>
+							<option value="administrativo">Administrativo</option>
+							<option value="profesional">Profesional</option>
+						</select>
+						<small id="tipoHelp" class="form-text text-muted">Seleccione el tipo de usuario</small>
 					</div>
 					
 					<input type="hidden" name="option" value="saveUsuario">

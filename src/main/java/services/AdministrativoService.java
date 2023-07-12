@@ -28,10 +28,11 @@ public class AdministrativoService {
 				int run = rs.getInt("run");
 				String nombre = rs.getString("nombre");
 				String fechaNacimiento = rs.getString("fecha_nacimiento");
+				String tipo = rs.getString("tipo");
 				String area = rs.getString("area");
 				String experiencia = rs.getString("experiencia");
 			
-				Administrativo administrativo = new Administrativo(nombre,fechaNacimiento,run, area, experiencia);
+				Administrativo administrativo = new Administrativo(run, nombre,fechaNacimiento, tipo, area, experiencia);
 				administrativos.add(administrativo);
 			}
 		} catch (Exception e) {
@@ -79,10 +80,11 @@ public class AdministrativoService {
 		    	
 				String nombre = rs.getString("nombre");
 				String fechaNacimiento = rs.getString("fecha_nacimiento");
+				String tipo = rs.getString("tipo");
 				String area = rs.getString("area");
 				String experiencia = rs.getString("experiencia");
 				
-				administrativo = new Administrativo(nombre,fechaNacimiento,run, area, experiencia);
+				administrativo = new Administrativo(run, nombre,fechaNacimiento, tipo, area, experiencia);
 		        
 		    }
 		    	

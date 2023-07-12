@@ -30,6 +30,7 @@ public class ClienteService {
 					int run = rs.getInt("run");
 					String nombre = rs.getString("nombre");
 					String fechaNacimiento = rs.getString("fecha_nacimiento");
+					String tipo = rs.getString("tipo");
 					String nombres = rs.getString("nombres");
 					String apellidos = rs.getString("apellidos");
 					String telefonos = rs.getString("telefonos");
@@ -39,8 +40,8 @@ public class ClienteService {
 					String comuna = rs.getString("comuna");
 					byte edad = rs.getByte("edad");
 				
-					Cliente cliente = new Cliente(run,nombre,fechaNacimiento,
-							nombres,apellidos,telefonos,afp,sistemaSalud,direccion,comuna,edad);
+					Cliente cliente = new Cliente(run,nombre,fechaNacimiento, tipo,
+							run, nombres,apellidos,telefonos,afp,sistemaSalud,direccion,comuna,edad);
 					clientes.add(cliente);
 				}
 			} catch (Exception e) {
@@ -89,6 +90,7 @@ public class ClienteService {
 					int run = rs.getInt("run");
 					String nombre = rs.getString("nombre");
 					String fechaNacimiento = rs.getString("fecha_nacimiento");
+					String tipo = rs.getString("tipo");
 					String nombres = rs.getString("nombres");
 					String apellidos = rs.getString("apellidos");
 					String telefonos = rs.getString("telefonos");
@@ -98,8 +100,8 @@ public class ClienteService {
 					String comuna = rs.getString("comuna");
 					byte edad = rs.getByte("edad");
 				
-					cliente = new Cliente(run,nombre,fechaNacimiento,
-							nombres,apellidos,telefonos,afp,sistemaSalud,direccion,comuna,edad);
+					cliente = new Cliente(run,nombre,fechaNacimiento,tipo,
+							run, nombres,apellidos,telefonos,afp,sistemaSalud,direccion,comuna,edad);
 				
 			    }
 			    	

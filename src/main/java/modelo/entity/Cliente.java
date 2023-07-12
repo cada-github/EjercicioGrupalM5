@@ -2,10 +2,8 @@ package modelo.entity;
 
 /** 
  * @version 1.0.0  Trabajo Sprint M5
- * @author Nicolae Villegas
- * @author Jesus Torres
- * @author Cristian Díaz
  * @author Fabiana Vega
+ * @author Cristian Díaz
  */
 
 /**
@@ -37,11 +35,11 @@ public class Cliente extends Usuario{
 	
 	public Cliente() {}
 	
-	public Cliente(int rutCliente, String nombreUsuario, String fechaNacimiento,
-			String nombres, String apellidos,String telefonos, String afp,
+	public Cliente(int runUsuario, String nombreUsuario, String fechaNacimiento, String tipo,
+			int rutCliente, String nombres, String apellidos,String telefonos, String afp,
 			int sistemaSalud, String direccion, String comuna, byte edad) {
 		
-		super(nombreUsuario, fechaNacimiento, rutCliente);
+		super(runUsuario, nombreUsuario, fechaNacimiento, tipo);
 		
 		this.rutCliente=rutCliente;
 		this.nombres = nombres;

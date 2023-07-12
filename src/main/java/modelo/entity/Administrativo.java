@@ -2,10 +2,8 @@ package modelo.entity;
 
 /** 
  * @version 1.0.0  Trabajo Sprint M5
- * @author Nicolae Villegas
- * @author Jesus Torres
- * @author Cristian Díaz
  * @author Fabiana Vega
+ * @author Cristian Díaz
  */
 
 /** Clase Administrativo extiende de clase Usuario
@@ -22,9 +20,9 @@ public class Administrativo extends Usuario {
 	
 	public Administrativo() {}
 	
-	public Administrativo(String nombreUsuario, String fechaNacimiento, int rut,
+	public Administrativo(int run, String nombreUsuario, String fechaNacimiento, String tipo,
 			String area, String aniosExperiencia) {
-		super(nombreUsuario,fechaNacimiento,rut);
+		super(run, nombreUsuario,fechaNacimiento,tipo);
 		
 		this.setAniosExperiencia(aniosExperiencia);
 		this.setArea(area);

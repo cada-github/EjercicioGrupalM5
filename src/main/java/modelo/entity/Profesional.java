@@ -2,10 +2,8 @@ package modelo.entity;
 
 /** 
  * @version 1.0.0  Trabajo Sprint M5
- * @author Nicolae Villegas
- * @author Jesus Torres
- * @author Cristian Díaz
  * @author Fabiana Vega
+ * @author Cristian Díaz
  */
 
 /** Clase Profesional extiende de clase Usuario
@@ -22,14 +20,12 @@ public class Profesional extends Usuario {
 	
 	public Profesional() {}
 	
-	public Profesional(String nombreUsuario, String fechaNacimiento, int rut,
+	public Profesional(int runUsuario, String nombreUsuario, String fechaNacimiento, String tipo,
 			String titulo, String fechaIngreso) {
-		super(nombreUsuario, fechaNacimiento, rut);
+		super(runUsuario, nombreUsuario, fechaNacimiento, tipo);
 		
 		this.setTitulo(titulo);
 		this.setFechaIngreso(fechaIngreso);
-		this.titulo = this.getTitulo();
-		this.fechaIngreso = this.getFechaIngreso();
 	}
 
 	// Metodos getters y setters

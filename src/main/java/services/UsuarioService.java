@@ -26,11 +26,12 @@ public class UsuarioService {
 		
 			while(rs.next()) {
 			
-				String nombre = rs.getString("nombre");
-				String fechaNacimiento = rs.getString("fecha_nacimiento");
 				int run = rs.getInt("run");
+				String nombre = rs.getString("nombre");
+				String fechaNacimiento = rs.getString("fecha-nacimiento");
+				String tipo = rs.getString("tipo");
 			
-				Usuario usuario = new Usuario(nombre, fechaNacimiento, run);
+				Usuario usuario = new Usuario(run, nombre, fechaNacimiento, tipo);
 				usuarios.add(usuario);
 			}
 		} catch (Exception e) {
@@ -76,8 +77,9 @@ public class UsuarioService {
 		    	
 		    	String nombre = rs.getString("nombre");
 				String fechaNacimiento = rs.getString("fecha_nacimiento");
+				String tipo = rs.getString("tipo");
 				
-				usuario = new Usuario(nombre,fechaNacimiento,run);
+				usuario = new Usuario(run, nombre,fechaNacimiento, tipo);
 		        
 		    }
 		    	

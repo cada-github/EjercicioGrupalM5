@@ -52,11 +52,12 @@ public class ServletCrudUsuarios extends HttpServlet {
 	      
 	    	case "updateUsuario" : {
 
+	    		int run = Integer.parseInt(request.getParameter("run"));
 	    		String nombre  = request.getParameter("nombre");
 	    		String fechaNacimiento  = request.getParameter("fechanacimiento");
-	    		int run = Integer.parseInt(request.getParameter("run"));
+	    		String tipo  = request.getParameter("tipo");
 	    		
-	    		Usuario updateUsuario = new Usuario(nombre,fechaNacimiento,run);
+	    		Usuario updateUsuario = new Usuario(run,nombre,fechaNacimiento,tipo);
 	    		
 	    		usuarioController.updateUsuario(updateUsuario);
 	    		
@@ -66,15 +67,30 @@ public class ServletCrudUsuarios extends HttpServlet {
 	    	}
 
 	    	case "saveUsuario" : {
-
+	    		
+	    		int run = Integer.parseInt(request.getParameter("run"));
 	    		String nombre  = request.getParameter("nombre");
 	    		String fechaNacimiento  = request.getParameter("fechanacimiento");
-	    		int run = Integer.parseInt(request.getParameter("run"));
+	    		String tipo = request.getParameter("tipo");
 	        
-	    		Usuario saveUsuario = new Usuario(nombre,fechaNacimiento,run);
+	    		Usuario saveUsuario = new Usuario(run, nombre,fechaNacimiento, tipo);
 	    		
 	    		usuarioController.saveUsuario(saveUsuario);
-	    		url = "crearusuario.jsp";
+	    		
+	    		switch (tipo) {
+	    			case "cliente":
+	    				url = "crearcliente.jsp";
+	    				break;
+	    			case "administrativo":
+	    				url = "crearadministrativo.jsp";
+	    				break;
+	    			case "profesional":
+	    				url = "crearprofesional.jsp";
+	    				break;
+	    			default:
+	    				System.out.println("Ha ocurrido un error en el tipo de usuario");
+	    		}
+	    		request.setAttribute("tipo", tipo);
 	    		break;
 	    	}
 

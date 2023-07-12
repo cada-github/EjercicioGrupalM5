@@ -38,6 +38,7 @@
 								<th scope="col">Nombre</th>
 								<th scope="col">Fecha de Nacimiento</th>
 								<th scope="col">Run</th>
+								<th scope="col">Opciones</th>
 							</tr>
 						</thead>
 	                    <tbody class="table-group-divider">

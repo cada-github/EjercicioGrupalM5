@@ -56,9 +56,10 @@ public class ServletCrudProfesional extends HttpServlet {
 	    		String fechaNacimiento = request.getParameter("fechanacimiento");
 	    		String area = request.getParameter("area");
 	    		String aniosExperiencia = request.getParameter("aniosexperiencia");
+	    		String tipo = request.getParameter("tipo");
 	        
 	    		Profesional updateProfesional = new Profesional(
-	    				nombreUsuario, fechaNacimiento, run, area, aniosExperiencia);
+	    				run,nombreUsuario, fechaNacimiento, tipo, area, aniosExperiencia);
 	    		
 	    		profesionalController.updateProfesional(updateProfesional);
 	    		url = "listadousuarios.jsp";
@@ -73,9 +74,10 @@ public class ServletCrudProfesional extends HttpServlet {
 	    		String fechaNacimiento = request.getParameter("fechanacimiento");
 	    		String area = request.getParameter("area");
 	    		String aniosExperiencia = request.getParameter("aniosexperiencia");
+	    		String tipo = request.getParameter("tipo");
 	        
 	    		Profesional saveProfesional = new Profesional(
-	    				nombreUsuario, fechaNacimiento, run, area, aniosExperiencia);
+	    				run, nombreUsuario, fechaNacimiento, tipo, area, aniosExperiencia);
 	    		
 	    		profesionalController.saveProfesional(saveProfesional);
 	    		url = "crearadminstrativo.jsp";

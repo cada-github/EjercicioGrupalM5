@@ -54,11 +54,12 @@ public class ServletCrudAdministrativo extends HttpServlet {
 	    		int run = Integer.parseInt(request.getParameter("run"));
 	    		String nombreUsuario = request.getParameter("nombreusuario");
 	    		String fechaNacimiento = request.getParameter("fechanacimiento");
+	    		String tipo = request.getParameter("tipo");
 	    		String area = request.getParameter("area");
 	    		String aniosExperiencia = request.getParameter("aniosexperiencia");
 	        
 	    		Administrativo updateAdministrativo = new Administrativo(
-	    				nombreUsuario, fechaNacimiento, run, area, aniosExperiencia);
+	    				run, nombreUsuario, fechaNacimiento, tipo, area, aniosExperiencia);
 	    		
 	    		administrativoController.updateAdministrativo(updateAdministrativo);
 	    		url = "listadousuarios.jsp";
@@ -71,11 +72,12 @@ public class ServletCrudAdministrativo extends HttpServlet {
 	    		int run = Integer.parseInt(request.getParameter("run"));
 	    		String nombreUsuario = request.getParameter("nombreusuario");
 	    		String fechaNacimiento = request.getParameter("fechanacimiento");
+	    		String tipo = request.getParameter("tipo");
 	    		String area = request.getParameter("area");
 	    		String aniosExperiencia = request.getParameter("aniosexperiencia");
 	        
 	    		Administrativo saveAdministrativo = new Administrativo(
-	    				nombreUsuario, fechaNacimiento, run, area, aniosExperiencia);
+	    				run, nombreUsuario, fechaNacimiento, tipo, area, aniosExperiencia);
 	    		
 	    		administrativoController.saveAdministrativo(saveAdministrativo);
 	    		url = "crearadminstrativo.jsp";

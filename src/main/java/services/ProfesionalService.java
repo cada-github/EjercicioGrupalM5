@@ -30,11 +30,12 @@ public class ProfesionalService {
 				
 				int run = rs.getInt("run");
 				String nombre = rs.getString("nombre");
-				String fechaNacimiento = rs.getString("fecha_nacimiento");
+				String fechaNacimiento = rs.getString("fecha-nacimiento");
+				String tipo = rs.getString("tipo");
 				String titulo = rs.getString("titulo");
 				String fechaIngreso = rs.getString("fecha_ingreso");
 			
-				Profesional profesional = new Profesional(nombre,fechaNacimiento,run, titulo, fechaIngreso);
+				Profesional profesional = new Profesional(run, nombre,fechaNacimiento,tipo, titulo, fechaIngreso);
 				profesionales.add(profesional);
 			}
 		} catch (Exception e) {
@@ -81,11 +82,12 @@ public class ProfesionalService {
 		    if(rs.next()) {
 		    	
 				String nombre = rs.getString("nombre");
-				String fechaNacimiento = rs.getString("fecha_nacimiento");
+				String fechaNacimiento = rs.getString("fecha-nacimiento");
+				String tipo = rs.getString("tipo");
 				String titulo = rs.getString("titulo");
 				String fechaIngreso = rs.getString("fecha_ingreso");
 				
-				profesional = new Profesional(nombre,fechaNacimiento,run, titulo, fechaIngreso);
+				profesional = new Profesional(run, nombre,fechaNacimiento,tipo, titulo, fechaIngreso);
 		        
 		    }
 		    	

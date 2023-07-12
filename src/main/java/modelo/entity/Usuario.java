@@ -2,10 +2,8 @@ package modelo.entity;
 
 /** 
  * @version 1.0.0  Trabajo Grupal Módulo 5
- * @author Nicolae Villegas
- * @author Jesus Torres
- * @author Cristian Díaz
  * @author Fabiana Vega
+ * @author Cristian Díaz
  */
 
 /**
@@ -14,26 +12,45 @@ package modelo.entity;
  * runUsuario
  * nombreUsuario
  * fechaNacimientoUsuario
+ * tipo
  */
 public class Usuario {
+	
+	private int runUsuario;
 	private String nombreUsuario; 
 	private String fechaNacimientoUsuario;
-	private int runUsuario;
+	private String tipo;
 	
 	// Constructores
 	
 	public Usuario() {	}
 	
-	public Usuario(String nombreUsuario, String fechaNacimientoUsuario, int run) {
+	public Usuario(int run, String nombreUsuario, String fechaNacimientoUsuario, String tipo ) {
 
+		this.setRunUsuario(run);
 		this.setNombreUsuario(nombreUsuario);
 		this.setFechaNacimientoUsuario(fechaNacimientoUsuario);
-		this.setRunUsuario(run);
+		this.setTipo(tipo);
 		
 	}
 	
 	//Metodos setters y getters
 	
+	/**
+	 * @return Retorna run del usuario
+	 */
+	public int getRunUsuario() {
+		return runUsuario;
+	}
+
+	/**
+	 * @param runUsuario Run del usuario
+	 * corresponde a un número menor a 99.999.999
+	 */
+	public void setRunUsuario(int runUsuario) {
+			this.runUsuario=runUsuario;
+	}
+
 	/**
 	 * @return Retorna el nombre del usuario
 	 */
@@ -66,26 +83,27 @@ public class Usuario {
 	}
 
 	/**
-	 * @return Retorna run del usuario
+	 * @return Retorna el tipo de usuario
 	 */
-	public int getRunUsuario() {
-		return runUsuario;
+	public String getTipo() {
+		return tipo;
 	}
 
 	/**
-	 * @param runUsuario Run del usuario
-	 * corresponde a un número menor a 99.999.999
+	 * @param tipo Recibe tipo
+	 * obligatorio, "cliente","administrativo","profesional"
 	 */
-	public void setRunUsuario(int runUsuario) {
-			this.runUsuario=runUsuario;
+	public void setTipo(String tipo) {
+			this.tipo = tipo;
 	}
-	
+
 	// Métodos sobreescritos
 	
 	@Override
 	public String toString() {
 		return "Usuario [nombreUsuario=" +	nombreUsuario + 
 				", fechaNacimientoUsuario=" + fechaNacimientoUsuario + 
-				", runUsuario=" + runUsuario + "]";
+				", runUsuario=" + runUsuario + 
+				", tipo="+ tipo + "]";
 	}
 }
