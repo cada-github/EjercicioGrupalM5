@@ -28,7 +28,7 @@ public class UsuarioService {
 			
 				int run = rs.getInt("run");
 				String nombre = rs.getString("nombre");
-				String fechaNacimiento = rs.getString("fecha-nacimiento");
+				String fechaNacimiento = rs.getString("fecha_nacimiento");
 				String tipo = rs.getString("tipo");
 			
 				Usuario usuario = new Usuario(run, nombre, fechaNacimiento, tipo);
@@ -117,15 +117,16 @@ public class UsuarioService {
 	  public Usuario saveUsuario(Usuario usuario) {
 		  
 		  DBConnection conexion = DBConnection.getInstance();
-		  String sql = "INSERT INTO usuarios (nombre, fecha_nacimiento, run) "
-		    		+ "VALUES ( ? , ?, ?)";
+		  String sql = "INSERT INTO usuarios (run, nombre, fecha_nacimiento,tipo) "
+		    		+ "VALUES ( ? , ?, ?, ?)";
 		  
 		  try {
 			  
 			  PreparedStatement preparedStatement = conexion.getConnection().prepareStatement(sql);
-			  preparedStatement.setString(1, usuario.getNombreUsuario());
-			  preparedStatement.setString(2, usuario.getFechaNacimientoUsuario());
-			  preparedStatement.setInt(3, usuario.getRunUsuario());
+			  preparedStatement.setInt(1, usuario.getRunUsuario());
+			  preparedStatement.setString(2, usuario.getNombreUsuario());
+			  preparedStatement.setString(3, usuario.getFechaNacimientoUsuario());
+			  preparedStatement.setString(4, usuario.getTipo());
 			  
 			  preparedStatement.executeUpdate();
 			  

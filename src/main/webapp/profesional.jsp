@@ -12,7 +12,7 @@
 		<link href="css/estilos.css" rel="stylesheet" type="text/css">
 		<!-- Estilos propios -->
 		
-		<title>Mantención de profesional</title>
+		<title>Profesional</title>
 	</head>
 	<body>
 		<!-- Inicio Navbar -->
@@ -26,7 +26,19 @@
 			<div class="row mt-5">
 				<div class="col-4 offset-4">
 				
-					<form class="fondo-form" action="ServletCrudProfesional" method="post" id="form-create-profesional">
+					<form class="fondo-form" action="ServletCrudProfesional" method="post" id="form-profesional">
+
+						<div class="mb-3">
+							<label for="run" class="form-label">Run</label>
+							<input 
+							type="number" 
+							class="form-control" 
+							id="run" 
+							name="run"
+							value="${profesional.run}"
+							readonly
+							/>
+						</div>
 	
 						<div class="mb-3">
 							<label for="titulo" class="form-label">Titulo</label>
@@ -50,12 +62,18 @@
 							/>
 						</div>					
 						
-						<input type="hidden" name="option" value="updateProfesional">
-						
+						<input type="hidden" name="option"
+						<% String accion = String.valueOf(request.getAttribute("accion"));
+	                    	if(accion.equals("save")) { %>
+							 value="saveProfesional"
+						<%}%>
+						<% if(accion.equals("update")){ %>
+							value="updateProfesional"
+						<%}%>
+						>											
 						<div class="d-grid gap-2">
 							<button type="submit" class="btn btn-primary">Enviar</button>
 						</div>
-						
 					</form>
 				</div>
 			</div>

@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import controlador.implementacion.AdministrativoController;
+import controlador.implementacion.UsuarioController;
 import modelo.entity.Administrativo;
+import modelo.entity.Usuario;
 
 /**
  * Servlet implementation class ServletCrudAdministrativo
@@ -24,6 +26,8 @@ public class ServletCrudAdministrativo extends HttpServlet {
 		String option = request.getParameter("option"); 
 		
 		AdministrativoController administrativoController = new AdministrativoController();
+		UsuarioController usuarioController = new UsuarioController();
+		
 	    String url = "login.jsp";
 	    
 	    switch (option) {
@@ -32,55 +36,53 @@ public class ServletCrudAdministrativo extends HttpServlet {
 	    		int runDelete = Integer.parseInt(request.getParameter("run"));
 
 	    		administrativoController.deleteAdministrativoByRun(runDelete);
+	    		
 	    		url = "listadousuarios.jsp";
-	    		request.setAttribute("administrativos", administrativoController.findAllAdministrativos());
-	    		break;
-	    	}
-	      
-	    	case "formUpdateAdministrativo" : {
-
-	    		int idFormAdministrativo = Integer.parseInt(request.getParameter("run"));
-
-	    		Administrativo administrativo = administrativoController.findByRunAdministrativo(idFormAdministrativo);
-
-	    		url = "administrativo.jsp";
-
-	    		request.setAttribute("administrativo", administrativo);
+	    		request.setAttribute("usuarios", usuarioController.findAllUsuarios());
 	    		break;
 	    	}
 	      
 	    	case "updateAdministrativo" : {
 
 	    		int run = Integer.parseInt(request.getParameter("run"));
-	    		String nombreUsuario = request.getParameter("nombreusuario");
-	    		String fechaNacimiento = request.getParameter("fechanacimiento");
-	    		String tipo = request.getParameter("tipo");
 	    		String area = request.getParameter("area");
 	    		String aniosExperiencia = request.getParameter("aniosexperiencia");
-	        
+	    		
+	    		Usuario usuario = usuarioController.findByRunUsuario(run);
+	    		
 	    		Administrativo updateAdministrativo = new Administrativo(
-	    				run, nombreUsuario, fechaNacimiento, tipo, area, aniosExperiencia);
+	    				usuario.getRunUsuario(),
+	    				usuario.getNombreUsuario(),
+	    				usuario.getFechaNacimientoUsuario(),
+	    				usuario.getTipo(),
+	    				run, area, aniosExperiencia);
 	    		
 	    		administrativoController.updateAdministrativo(updateAdministrativo);
 	    		url = "listadousuarios.jsp";
-	    		request.setAttribute("administrativos", administrativoController.findAllAdministrativos());
+	    		request.setAttribute("usuarios", usuarioController.findAllUsuarios());
 	    		break;
 	    	}
 
 	    	case "saveAdministrativo" : {
-
+	    		
 	    		int run = Integer.parseInt(request.getParameter("run"));
-	    		String nombreUsuario = request.getParameter("nombreusuario");
-	    		String fechaNacimiento = request.getParameter("fechanacimiento");
-	    		String tipo = request.getParameter("tipo");
 	    		String area = request.getParameter("area");
 	    		String aniosExperiencia = request.getParameter("aniosexperiencia");
-	        
+	    		
+	    		Usuario usuario = usuarioController.findByRunUsuario(run);
+	    		
 	    		Administrativo saveAdministrativo = new Administrativo(
-	    				run, nombreUsuario, fechaNacimiento, tipo, area, aniosExperiencia);
+	    				usuario.getRunUsuario(),
+	    				usuario.getNombreUsuario(),
+	    				usuario.getFechaNacimientoUsuario(),
+	    				usuario.getTipo(),
+	    				run, area, aniosExperiencia);
 	    		
 	    		administrativoController.saveAdministrativo(saveAdministrativo);
-	    		url = "crearadminstrativo.jsp";
+	    		
+	    		url = "listadousuarios.jsp";
+	    		request.setAttribute("usuarios", usuarioController.findAllUsuarios());
+
 	    		break;
 	    	}
 

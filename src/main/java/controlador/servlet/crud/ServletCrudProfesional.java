@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import controlador.implementacion.ProfesionalController;
+import controlador.implementacion.UsuarioController;
 import modelo.entity.Profesional;
+import modelo.entity.Usuario;
 
 /**
  * Servlet implementation class ServletCrudProfesional
@@ -24,6 +26,8 @@ public class ServletCrudProfesional extends HttpServlet {
 		String option = request.getParameter("option"); 
 		
 		ProfesionalController profesionalController = new ProfesionalController();
+		UsuarioController usuarioController = new UsuarioController();
+		
 	    String url = "login.jsp";
 	    
 	    switch (option) {
@@ -36,56 +40,54 @@ public class ServletCrudProfesional extends HttpServlet {
 	    		request.setAttribute("profesionales", profesionalController.findAllProfesionales());
 	    		break;
 	    	}
-	      
-	    	case "formUpdateProfesional" : {
-
-	    		int idFormProfesional = Integer.parseInt(request.getParameter("run"));
-
-	    		Profesional profesional = profesionalController.findByRunProfesional(idFormProfesional);
-
-	    		url = "profesional.jsp";
-
-	    		request.setAttribute("profesional", profesional);
-	    		break;
-	    	}
-	      
+	      	      
 	    	case "updateProfesional" : {
 
 	    		int run = Integer.parseInt(request.getParameter("run"));
-	    		String nombreUsuario = request.getParameter("nombreusuario");
-	    		String fechaNacimiento = request.getParameter("fechanacimiento");
-	    		String area = request.getParameter("area");
-	    		String aniosExperiencia = request.getParameter("aniosexperiencia");
-	    		String tipo = request.getParameter("tipo");
-	        
+	    		String titulo = request.getParameter("titulo");
+	    		String fechaIngreso = request.getParameter("fechaingreso");
+
+	    		Usuario usuario = usuarioController.findByRunUsuario(run);
+	    		
 	    		Profesional updateProfesional = new Profesional(
-	    				run,nombreUsuario, fechaNacimiento, tipo, area, aniosExperiencia);
+	    				usuario.getRunUsuario(),
+	    				usuario.getNombreUsuario(),
+	    				usuario.getFechaNacimientoUsuario(),
+	    				usuario.getTipo(),
+	    				run, titulo, fechaIngreso);
 	    		
 	    		profesionalController.updateProfesional(updateProfesional);
+	    		
 	    		url = "listadousuarios.jsp";
-	    		request.setAttribute("profesionales", profesionalController.findAllProfesionales());
+	    		request.setAttribute("usuarios", usuarioController.findAllUsuarios());
 	    		break;
 	    	}
 
 	    	case "saveProfesional" : {
 
 	    		int run = Integer.parseInt(request.getParameter("run"));
-	    		String nombreUsuario = request.getParameter("nombreusuario");
-	    		String fechaNacimiento = request.getParameter("fechanacimiento");
-	    		String area = request.getParameter("area");
-	    		String aniosExperiencia = request.getParameter("aniosexperiencia");
-	    		String tipo = request.getParameter("tipo");
-	        
+	    		String titulo = request.getParameter("titulo");
+	    		String fechaIngreso = request.getParameter("fechaingreso");
+	    		
+	    		Usuario usuario = usuarioController.findByRunUsuario(run);
+	    		
 	    		Profesional saveProfesional = new Profesional(
-	    				run, nombreUsuario, fechaNacimiento, tipo, area, aniosExperiencia);
+	    				usuario.getRunUsuario(),
+	    				usuario.getNombreUsuario(),
+	    				usuario.getFechaNacimientoUsuario(),
+	    				usuario.getTipo(),
+	    				run, titulo, fechaIngreso);
 	    		
 	    		profesionalController.saveProfesional(saveProfesional);
-	    		url = "crearadminstrativo.jsp";
+	    		
+	    		url = "listadousuarios.jsp";
+	    		request.setAttribute("usuarios", usuarioController.findAllUsuarios());
+
 	    		break;
 	    	}
 
 	    	default:
-	    		break;
+	    	break;
 	        
 	    }
 	    // fin switch

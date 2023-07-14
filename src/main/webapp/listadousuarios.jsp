@@ -11,10 +11,7 @@
 		<!--Bootstrap -->	
 
 	    <!-- Font Awesome -->
-		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
-		  integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
-		  crossorigin="anonymous" 
-		  referrerpolicy="no-referrer" />
+		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 		<!-- /Font Awesome -->		
 		
 		<!-- Estilos propios -->
@@ -38,6 +35,7 @@
 								<th scope="col">Nombre</th>
 								<th scope="col">Fecha de Nacimiento</th>
 								<th scope="col">Run</th>
+								<th scope="col">Tipo Usuario</th>
 								<th scope="col">Opciones</th>
 							</tr>
 						</thead>
@@ -51,6 +49,7 @@
                         	<td><%= u.getNombreUsuario()%></td>
                         	<td><%= u.getFechaNacimientoUsuario()%></td>
                         	<td><%= u.getRunUsuario() %></td>
+                        	<td><%= u.getTipo() %></td>
                         	<td>
                         		<!-- Editar -->
                         		<a 
@@ -73,7 +72,6 @@
 						
 					</table>
 				</div>
-				<a class="text-center mt-5" href="inicio.jsp">Volver</a>
 			</div>
 		</div>
 		<!-- JS BootStrap -->

@@ -12,7 +12,7 @@
 		<link href="css/estilos.css" rel="stylesheet" type="text/css">
 		<!-- Estilos propios -->
 		
-		<title>Mantención de cliente</title>
+		<title>Cliente</title>
 	</head>
 	<body>
 		<!-- Inicio Navbar -->
@@ -39,7 +39,6 @@
 						readonly
 						/>
 					</div>
-				
 					
 					<div class="mb-3">
 						<label for="nombres" class="form-label">Nombres</label>
@@ -127,14 +126,19 @@
 						name="edad"
 						value="${cliente.edad}"
 						/>
-					</div>					
-					
-					<input type="hidden" name="option" value="updateCliente">
-					
-					<div class="d-grid gap-2">
-						<button type="submit" class="btn btn-primary">Enviar</button>
 					</div>
-					
+					<input type="hidden" name="option"
+					<% String accion = String.valueOf(request.getAttribute("accion"));
+                    	if(accion.equals("save")) { %>
+						 value="saveCliente"
+					<%}%>
+					<% if(accion.equals("update")){ %>
+						value="updateCliente"
+					<%}%>
+					>
+					<div class="d-grid gap-2">
+						<button type="submit" class="btn btn-primary">Actualizar</button>
+					</div>
 				</form>
 			</div>
 		</div>

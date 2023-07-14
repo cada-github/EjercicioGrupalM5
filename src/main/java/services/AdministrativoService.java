@@ -16,7 +16,8 @@ public class AdministrativoService {
 		List<Administrativo> administrativos = new ArrayList<>();
 		DBConnection conexion = DBConnection.getInstance();
 	
-		String sql = "SELECT u.*, a.area, a.experiencia FROM usuarios u INNER JOIN administrativos a ON u.run=a.run";
+		String sql = "SELECT u.*, a.area, a.experiencia "
+				+ "FROM usuarios u INNER JOIN administrativos a ON u.run=a.run";
 		
 		try {
 			
@@ -27,12 +28,12 @@ public class AdministrativoService {
 				
 				int run = rs.getInt("run");
 				String nombre = rs.getString("nombre");
-				String fechaNacimiento = rs.getString("fecha_nacimiento");
+				String fechaNacimiento = rs.getString("fecha-nacimiento");
 				String tipo = rs.getString("tipo");
 				String area = rs.getString("area");
 				String experiencia = rs.getString("experiencia");
 			
-				Administrativo administrativo = new Administrativo(run, nombre,fechaNacimiento, tipo, area, experiencia);
+				Administrativo administrativo = new Administrativo(run, nombre,fechaNacimiento, tipo, run, area, experiencia);
 				administrativos.add(administrativo);
 			}
 		} catch (Exception e) {
@@ -68,7 +69,7 @@ public class AdministrativoService {
 		Administrativo administrativo = null;
 		String sql = "SELECT u.*, a.area, a.experiencia "
 				+ "FROM usuarios u INNER JOIN administrativos a "
-				+ "ON u.run=a.run WHERE a.run = ?";
+				+ "ON u.run=a.run WHERE u.run = ?";
 		    
 		try {
 			
@@ -84,7 +85,7 @@ public class AdministrativoService {
 				String area = rs.getString("area");
 				String experiencia = rs.getString("experiencia");
 				
-				administrativo = new Administrativo(run, nombre,fechaNacimiento, tipo, area, experiencia);
+				administrativo = new Administrativo(run, nombre,fechaNacimiento, tipo, run, area, experiencia);
 		        
 		    }
 		    	
@@ -99,7 +100,9 @@ public class AdministrativoService {
 
 	  public Administrativo updateAdministrativo(Administrativo administrativo) {
 		  
-		  String sql = "UPDATE administrativos SET area = ?, experiencia = ? WHERE run = ?";
+		  String sql = "UPDATE administrativos SET "
+		  		+ "area = ?, experiencia = ? "
+		  		+ "WHERE run = ?";
 		    
 		  try {
 			  
@@ -107,7 +110,7 @@ public class AdministrativoService {
 
 			  statement.setString(1, administrativo.getArea());
 			  statement.setString(2, administrativo.getAniosExperiencia());
-			  statement.setInt(3, administrativo.getRunUsuario());
+			  statement.setInt(3, administrativo.getRun());
 		    	
 			  statement.executeUpdate();
 		      
@@ -123,15 +126,16 @@ public class AdministrativoService {
 	  public Administrativo saveAdministrativo(Administrativo administrativo) {
 		  
 		  DBConnection conexion = DBConnection.getInstance();
-		  String sql = "INSERT INTO administrativos (run, area, experiencia) "
-		    		+ "VALUES ( ? , ?, ?)";
+		  String sql = "INSERT INTO administrativos "
+		  		+ "(run, area, experiencia) "
+		    	+ "VALUES ( ? , ?, ?)";
 		  
 		  try {
 			  
 			  PreparedStatement preparedStatement = conexion.getConnection().prepareStatement(sql);
-			  preparedStatement.setInt(3, administrativo.getRunUsuario());
-			  preparedStatement.setString(1, administrativo.getArea());
-			  preparedStatement.setString(2, administrativo.getAniosExperiencia());
+			  preparedStatement.setInt(1, administrativo.getRunUsuario());
+			  preparedStatement.setString(2, administrativo.getArea());
+			  preparedStatement.setString(3, administrativo.getAniosExperiencia());
 			  
 			  preparedStatement.executeUpdate();
 			  

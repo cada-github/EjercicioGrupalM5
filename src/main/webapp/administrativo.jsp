@@ -12,7 +12,7 @@
 		<link href="css/estilos.css" rel="stylesheet" type="text/css">
 		<!-- Estilos propios -->
 		
-		<title>Mantención de administrativo</title>
+		<title>Administrativo</title>
 	</head>
 	<body>
 		<!-- Inicio Navbar -->
@@ -26,7 +26,19 @@
 			<div class="row mt-5">
 				<div class="col-4 offset-4">
 				
-				<form class="fondo-form" action="ServletCrudAdministrativo" method="post" id="form-create-administrativo">
+				<form class="fondo-form" action="ServletCrudAdministrativo" method="post" id="form-administrativo">
+
+					<div class="mb-3">
+						<label for="run" class="form-label">Run</label>
+						<input 
+						type="number" 
+						class="form-control" 
+						id="run" 
+						name="run"
+						value="${administrativo.run}"
+						readonly
+						/>
+					</div>
 
 					<div class="mb-3">
 						<label for="area" class="form-label">Area</label>
@@ -50,10 +62,17 @@
 						/>
 					</div>					
 					
-					<input type="hidden" name="option" value="updateAdministrativo">
-					
+					<input type="hidden" name="option"
+					<% String accion = String.valueOf(request.getAttribute("accion"));
+                    	if(accion.equals("save")) { %>
+						 value="saveAdministrativo"
+					<%}%>
+					<% if(accion.equals("update")){ %>
+						value="updateAdministrativo"
+					<%}%>
+					>					
 					<div class="d-grid gap-2">
-						<button type="submit" class="btn btn-primary">Enviar</button>
+						<button type="submit" class="btn btn-primary">Actualizar</button>
 					</div>
 					
 				</form>

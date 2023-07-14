@@ -53,7 +53,8 @@ public class ClienteService {
 		public boolean deleteClienteByRut(int rut) {
 			
 			DBConnection conexion = DBConnection.getInstance();
-		    String sql = "DELETE FROM clientes WHERE rut = ?" ;
+		    String sql = "DELETE FROM clientes "
+		    		+ "WHERE rut = ?" ;
 
 		    try {
 		    	
@@ -72,25 +73,25 @@ public class ClienteService {
 		     
 		}
 		
-		public Cliente findByRutCliente(int rut) {
+		public Cliente findByRutCliente(int run) {
 			
 			Cliente cliente = null;
-			String sql = "select u.*, c.nombres, c.apellidos, c.telefonos, c.afp, c.sistema_salud, c.direccion, c.comuna, c.edad "
-					+ "FROM usuarios u INNER JOIN clientes c "
-					+ "ON u.run=a.run WHERE c.run = ?";
+			String sql = "SELECT u.*, c.nombres, c.apellidos, c.telefonos, c.afp, c.sistema_salud, c.direccion, c.comuna, c.edad "
+					+ "FROM usuarios u INNER JOIN clientes c ON u.run=c.rut "
+					+ "WHERE u.run = ?";
 			    
 			try {
 				
 				PreparedStatement statement = conexion.getConnection().prepareStatement(sql);
-			    statement.setInt(1, rut);
+			    statement.setInt(1, run);
 			    ResultSet rs = statement.executeQuery();
 			    	
 			    if(rs.next()) {
 			    	
-					int run = rs.getInt("run");
 					String nombre = rs.getString("nombre");
 					String fechaNacimiento = rs.getString("fecha_nacimiento");
 					String tipo = rs.getString("tipo");
+					int rut = run;
 					String nombres = rs.getString("nombres");
 					String apellidos = rs.getString("apellidos");
 					String telefonos = rs.getString("telefonos");
@@ -101,7 +102,7 @@ public class ClienteService {
 					byte edad = rs.getByte("edad");
 				
 					cliente = new Cliente(run,nombre,fechaNacimiento,tipo,
-							run, nombres,apellidos,telefonos,afp,sistemaSalud,direccion,comuna,edad);
+							rut, nombres,apellidos,telefonos,afp,sistemaSalud,direccion,comuna,edad);
 				
 			    }
 			    	
@@ -133,6 +134,7 @@ public class ClienteService {
 				  statement.setString(7, cliente.getDireccion());
 				  statement.setString(8, cliente.getComuna());
 				  statement.setInt(9, cliente.getEdad());
+				  statement.setInt(10, cliente.getRunUsuario());
 				  
 				  statement.executeUpdate();
 			      
@@ -148,8 +150,9 @@ public class ClienteService {
 		  public Cliente saveCliente(Cliente cliente) {
 			  
 			  DBConnection conexion = DBConnection.getInstance();
-			  String sql = "INSERT INTO clientes (rut, nombres, apelliddos, telefonos, afp, sistema-salud, direccion, comuna, edad) "
-			    		+ "VALUES ( ? , ?, ?, ?, ?, ?, ? ,?, ?)";
+			  String sql = "INSERT INTO clientes "
+			  		+ "(rut, nombres, apellidos, telefonos, afp, sistema_salud, direccion, comuna, edad) "
+			    	+ "VALUES ( ? , ?, ?, ?, ?, ?, ? ,?, ?)";
 			  
 			  try {
 				  

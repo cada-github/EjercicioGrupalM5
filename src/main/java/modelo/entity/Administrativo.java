@@ -8,11 +8,13 @@ package modelo.entity;
 
 /** Clase Administrativo extiende de clase Usuario
 * Atributos:
+* run
 * area
 * aniosExperiencia
 */
 public class Administrativo extends Usuario {
 
+	private int run;
 	private String area;
 	private String aniosExperiencia;
 	
@@ -20,19 +22,32 @@ public class Administrativo extends Usuario {
 	
 	public Administrativo() {}
 	
-	public Administrativo(int run, String nombreUsuario, String fechaNacimiento, String tipo,
-			String area, String aniosExperiencia) {
-		super(run, nombreUsuario,fechaNacimiento,tipo);
+	public Administrativo(int runUsuario, String nombreUsuario, String fechaNacimiento, String tipo,
+			int run, String area, String aniosExperiencia) {
+		super(runUsuario, nombreUsuario,fechaNacimiento,tipo);
 		
+		this.setRun(run);
 		this.setAniosExperiencia(aniosExperiencia);
 		this.setArea(area);
-		
-		this.area = this.getArea();
-		this.aniosExperiencia = this.getAniosExperiencia();
 	}
 	
 	// Métodos getters y setters
 	
+	/**
+	 * @return Retorna entero run
+	 */
+	public int getRun() {
+		return run;
+	}
+	
+	/**
+	 * @param run Recibe y valida entero run
+	 * obligatorio
+	 */
+	public void setRun(int run) {
+	this.run = run;
+	}
+
 	/**
 	 * @return Retorna cadena area
 	 */
@@ -67,7 +82,9 @@ public class Administrativo extends Usuario {
 	
 	@Override
 	public String toString() {
-		return "Administrativo [area=" + area + 
+		return "Administrativo [" +
+				", run=" + run +
+				", area=" + area + 
 				", aniosExperiencia=" + aniosExperiencia + 
 				", toString()="	+ super.toString() + "]";
 	}

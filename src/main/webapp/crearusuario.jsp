@@ -7,7 +7,7 @@
 		<meta charset="UTF-8">
 		<!--Bootstrap -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-		<!--Bootstrap -->		
+		<!--Bootstrap -->
 
 		<!-- Estilos propios -->
 		<link href="css/estilos.css" rel="stylesheet" type="text/css">
@@ -15,21 +15,18 @@
 
 		<title>crear nuevo usuario</title>
 	</head>
-	<body>
-	
-	<!-- Inicio Navbar -->
-	<jsp:include page="menu.jsp"/>
-	<!-- Fin Navbar -->
-	
-	<div class="mt-5 container">
-	
-		<h2 class="text-center mb-5 text-bg-info">Nuevo Usuario</h2>
-	
-		<div class="row mt-5">
-			<div class="col-4 offset-4">
-				
-				<form class="fondo-form" action="ServletCrudUsuarios" method="post" id="form-create-usuario">
-				
+		<body>
+		<!-- Inicio Navbar -->
+		<jsp:include page="menu.jsp"/>
+		<!-- Fin Navbar -->
+
+		<div class="mt-5 container">
+			<h2 class="text-center mb-5 text-bg-info">Nuevo Usuario</h2>
+
+			<div class="row mt-5">
+				<div class="col-4 offset-4">
+					<form class="fondo-form" action="ServletCrudUsuarios" method="post" id="form-usuario">
+
 					<div class="mb-3">
 						<label for="run" class="form-label">Run</label>
 						<input 
@@ -42,7 +39,6 @@
 						<small id="runHelp" class="form-text text-muted">Digite el RUN</small>
 					</div>
 					
-				
 					<div class="mb-3">
 						<label for="nombre" class="form-label">Nombre</label>
 						<input
@@ -77,14 +73,12 @@
 					</div>
 					
 					<input type="hidden" name="option" value="saveUsuario">
-					
 					<div class="d-grid gap-2">
-						<button type="submit" class="btn btn-primary">Enviar</button>
+						<button type="submit" class="btn btn-primary">Registrar</button>
 					</div>
 					
-				</form>				
+				</form>
 			</div>
-			<a class="text-center mt-5" href="inicio.jsp">Volver</a>
 		</div>
 	</div>
 	
